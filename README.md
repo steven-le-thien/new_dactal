@@ -1,6 +1,6 @@
 ### DACTAL (2019 implementation)
 
-The DACTAL is described in `Nelesen, S., Liu, K., Wang, L. S., Linder, C. R., & Warnow, T. (2012). DACTAL: divide-and-conquer trees (almost) without alignments. Bioinformatics (Oxford, England), 28(12), i274–i282. doi:10.1093/bioinformatics/bts218`. It is a divide-and-conquer based method for the problem of estimating the model gene tree given a set of alignment.
+DACTAL is described in `Nelesen, S., Liu, K., Wang, L. S., Linder, C. R., & Warnow, T. (2012). DACTAL: divide-and-conquer trees (almost) without alignments. Bioinformatics (Oxford, England), 28(12), i274–i282. doi:10.1093/bioinformatics/bts218`. It is a divide-and-conquer based method for the problem of estimating the model gene tree given a set of alignment.
 
 The implementation design can be summarized as. 1/ Build a fast tree on the full set of alignment; 2/ Decompose the set of alignment into multiple overlapping subalignments with small size using padded centroid decomposition of the initial tree; 3/ Build trees on the small overlapping subalignments; 4/ Combine the subtrees using a supertree method in the same order they were decomposed
 
