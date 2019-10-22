@@ -15,8 +15,19 @@ If you want to use different methods for subset tree computations and supertree 
 2. RAxML (only if needed to run RAxML)
 3. Newick Utils (https://github.com/tjunier/newick_utils)
 4. Extra scripts in the tools folder
-5. FastRFS 
-6. GreedyRFS (only if needed to run GreedyRFS) 
+5. FastRFS (only if needed to run FastRFS)
+6. GreedyRFS (only if needed to run GreedyRFS)
+7. SuperFine (only if needed to run SuperFine) 
+
+Furthermore, the binaries must be named exactly as
+1. FastTree2: `FastTree`
+2. RAxML: `raxmlHPC-PTHREADS-AVX`
+3. FastRFS: `FastRFS`
+4. GreedyRFS: `GreedyRFS.py`
+5. SuperFine: `runSuperFine.py`
+6. All python scripts in the tools folder must have the same name as that in the distribution
+
+If for some reason you would prefer to use another name for any of the binaries, the modify the corresponding string in `tools.h` then recompile with `make clean; make dactal`.  
 
 You will need at least one subset tree computation method and one supertree method installed. 
 
@@ -35,7 +46,9 @@ These steps will affect the `CC` variable in the environment that is used to lin
 
 Run `make dactal` to generate the binary `dactal`, used for DACTAL. Also put this binary on your PATH variable. The command for DACTAL is 
 ```
-dactal -i [input_alignment_file] -o [output_tree_file] -m [maximum_subset_size] -p [overlapping_size_per_subtree] -s [supertree_method] -b [subtree_method] -d [distance_model]
+dactal -i [input_alignment_file] -o [output_tree_file] \
+-m [maximum_subset_size] -p [overlapping_size_per_subtree] \
+-s [supertree_method] -b [subtree_method] -d [distance_model]
 ```
 All flags are currently mandatory.
 
@@ -44,7 +57,7 @@ All flags are currently mandatory.
 2. `-o` specifies output tree. Only specify the filename (and not the full path) if you are using RAxML for the subtree computation. Any file with the same name will be overwritten.
 3. `-m` accepts a positive number that approximates (upperbounds) the subtree size
 4. `-p` accepts a positive number that approximates (upperbounds) the padding size. This is per subtree in each step of centroid-edge decomposition. 
-5. `-s` accepts either `fastrfs` or `greedyrfs`, which specifies the supertree method used to combine subtrees. 
+5. `-s` accepts either `superfine`,`fastrfs` or `greedyrfs`, which specifies the supertree method used to combine subtrees. 
 6. `-b` accepts either `fasttree` or `raxml`, which specifies the subtree method used to build the decomposed subtrees.
 7. `-d` accepts either `logdet` or `jc`, which are the different distance models.
 

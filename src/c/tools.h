@@ -72,6 +72,8 @@ static const char fastrfs_bin[]
   = "FastRFS";
 static const char RAxML_bin[]
   = "raxmlHPC-PTHREADS-AVX";
+static const char superfine_bin[]
+  = "runSuperFine.py";
 #else
 static const char RAxML_bin[]    = "raxmlHPC-PTHREADS-SSE3";
 static const char FastTree_bin[] = "FastTree";

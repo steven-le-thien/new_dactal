@@ -9,7 +9,8 @@ typedef enum DIST_MOD{
 
 typedef enum SUPERTREE_M{
   M_FASTRFS,
-  M_GREEDYRFS
+  M_GREEDYRFS,
+  M_SUPERFINE
 } SUPERTREE_M;
 
 typedef enum SUBTREE_M{
@@ -31,6 +32,8 @@ typedef struct dactal_options{
   SUPERTREE_M supertree_method;
   SUBTREE_M subtree_method;
   DIST_MOD distance_model;
+
+  int help_mode;
 
 } DACTAL_GRP;
 

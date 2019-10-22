@@ -138,17 +138,6 @@ int recursive_subroutine(
   return 0;
 }
 
-// int rm_label_job(char * in_tree, char * out_path)
-// {
-//   SYSCAL_STD(
-//       "%s -t %s -o %s", 
-//       rm_lbl_bin,
-//       in_tree, 
-//       out_path
-//   );
-//   return 0;
-// }
-
 int raxml_job(
     DIST_MOD dist_model, 
     char * in_seq,
@@ -407,6 +396,14 @@ int combine_trees(
           out_tree_suffix
       );
       break;
+
+    case M_SUPERFINE:
+      SYSCAL_STD(
+          "%s -r rmrp %s > %s",
+          superfine_bin,
+          tmp_supertree_in_path,
+          out_tree_suffix
+      );
   }
 
   return 0;

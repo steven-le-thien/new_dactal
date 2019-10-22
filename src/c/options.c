@@ -39,6 +39,10 @@ int read_dactal_cmd_arg(
   ASSERT_INPUT(
       argv[1][0] == '-'
   );
+  if(argv[1][1] == 'h'){
+    dactal_options->help_mode = 1;
+    return 0;
+  }
 
   // State machine to read in user input
   is_flag = 1; // always start with a flag
@@ -153,5 +157,14 @@ int init_dactal_options(DACTAL_GRP * dactal_options){
   dactal_options->in_aln         = NULL;
   dactal_options->out_tree           = NULL;
   dactal_options->tmp_folder          = NULL;
+
+  dactal_options->stopping_t = -1;
+  dactal_options->padding = -1;
+
+  dactal_options->supertree_method = M_SUPERFINE;
+  dactal_options->subtree_method = M_FASTTREE;
+  dactal_options->distance_model = D_JC;
+
+  dactal_options->help_mode = 0;
   return 0;
 }

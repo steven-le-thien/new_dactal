@@ -24,6 +24,16 @@ int main(int argc, char ** argv){
       read_dactal_cmd_arg(argc, argv, &dactal_options) 
   );
 
+  if(dactal_options.help_mode){
+    printf("Usage: dactal -i [input_alignment_file] -o [output_tree_file] "
+        "-m [maximum_subset_size] -p [overlapping_size_per_subtree] "
+        "-s [supertree_method] -b [subtree_method] -d [distance_model]\n");
+    printf("OR dactal -h\n");
+    printf("Default: SuperFine + FastTree + JC\n");
+
+    return 0;
+  }
+
   //DEBUG
   printf("Input alignment is %s\n", dactal_options.in_aln);
   printf("Output tree is %s\n", dactal_options.out_tree);
