@@ -11,13 +11,13 @@ DACTAL was built from standard C packages with python3 scripts
 3. Python 3
 4. FastTree2 (http://www.microbesonline.org/fasttree/FastTree.c)
 5. Newick Utils (https://github.com/tjunier/newick_utils)
+6. Extra scripts in the tools folder
 
 If you want to use different methods for subset tree computations and supertree then you must also have them on your PATH variable
-1. RAxML (https://github.com/stamatak/standard-RAxML)(only if needed to run RAxML)
-2. FastRFS (https://github.com/pranjalv123/FastRFS)(only if needed to run FastRFS)
-3. GreedyRFS (https://github.com/yuxilin51/GreedyRFS)(only if needed to run GreedyRFS)
-4. SuperFine (https://github.com/dtneves/SuperFine)(only if needed to run SuperFine) 
-5. Extra scripts in the tools folder
+1. RAxML (https://github.com/stamatak/standard-RAxML) (only if needed to run RAxML)
+2. FastRFS (https://github.com/pranjalv123/FastRFS) (only if needed to run FastRFS)
+3. GreedyRFS (https://github.com/yuxilin51/GreedyRFS) (only if needed to run GreedyRFS)
+4. SuperFine (https://github.com/dtneves/SuperFine) (only if needed to run SuperFine) 
 
 Furthermore, the binaries must be named exactly as
 1. FastTree2: `FastTree`
