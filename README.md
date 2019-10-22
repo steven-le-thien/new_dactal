@@ -27,7 +27,7 @@ Furthermore, the binaries must be named exactly as
 5. SuperFine: `runSuperFine.py`
 6. All python scripts in the tools folder must have the same name as that in the distribution
 
-If for some reason you would prefer to use another name for any of the binaries, the modify the corresponding string in `tools.h` then recompile with `make clean; make dactal`.  
+If for some reason you would prefer to use another name for any of the binaries, then modify the corresponding string in `tools.h` and recompile with `make clean; make dactal`.  
 
 You will need at least one subset tree computation method and one supertree method installed. 
 
